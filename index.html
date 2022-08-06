@@ -12,9 +12,10 @@
 
 <body>
     <div class="container p-3">
-        <h1>Privacy Policy (Hernan.Reiq)</h1>
+        <h1 id="privacy">Privacy Policy (Hernan.Reiq)</h1>
         <p>
-            Innim built the Hernan.Reiq app as a Free app. This SERVICE is provided by Innim at no cost and is
+            Innim built the <span id="app">Hernan.Reiq</span> app as a Free app. This SERVICE is provided by Innim at no
+            cost and is
             intended
             for use as is.
         </p>
@@ -414,6 +415,16 @@
             reiqvideos@gmail.com
         </p>
     </div>
+    <script>
+        var privacy = document.getElementById('privacy');
+        var app = document.getElementById('app');
+        var content = document.location.search.split('=')[1].replace(/%20/gm, ' ');
+        if(content){
+            privacy.innerText = `Privacy Policy (${content})`;
+            app.innerText = content;
+        }
+        console.log(content)
+    </script>
 </body>
 
 </html>
